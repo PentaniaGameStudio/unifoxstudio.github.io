@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Redirecting...</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const clickid = urlParams.get("clickid") || "unknown";
+
+    const img = new Image();
+    img.src = `https://syndication.exoclick.com/pixel.php?goal=1&tag=patreonclick&click_id=${clickid}`;
+
+    setTimeout(() => {
+      window.location.href = `https://www.patreon.com/nymphomaniafantasytown?utm_source=exoclick&utm_campaign=redirect_track&clickid=${clickid}`;
+    }, 300);
+  </script>
+</head>
+<body>
+  <p style="text-align:center;margin-top:20%;font-size:1.5rem;color:#fff;background:#000;padding:2rem;">Redirecting to Patreon...</p>
+</body>
+</html>
