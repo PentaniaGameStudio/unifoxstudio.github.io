@@ -12,7 +12,6 @@
     gtag('js', new Date());
     gtag('config', 'G-79Z3TFRFMG');
 
-    // Apply random animation delay to each CTA button
     window.addEventListener('DOMContentLoaded', () => {
       document.querySelectorAll('.cta-buttons a').forEach(button => {
         const delay = (Math.random() * 1).toFixed(2) + 's';
@@ -39,33 +38,50 @@
       max-height: 300px;
       object-fit: cover;
     }
-	h1 {
-	  font-size: 4rem;
-	  margin-top: 1rem;
-	  font-family: 'Mogra', cursive;
-	  text-align: center;
-	  color: rgba(255, 255, 255, 0.1);
-	  background: linear-gradient(to right, #222, #fff 50%, #222);
-	  background-size: 125px 100%;
-	  background-clip: text;
-	  -webkit-background-clip: text;
-	  -webkit-animation: shimmer 2s infinite;
-	  animation: shimmer 2s infinite;
-	  background-repeat: no-repeat;
-	  background-position: 0 0;
-	  background-color: #222;
-	  overflow: hidden;
-	}
-
-    @keyframes shimmer {
-      0% {
-        background-position: top left;
-      }
-      100% {
-        background-position: top right;
-      }
+    h1.shimmer {
+      font-family: 'Mogra', cursive;
+      font-size: 4rem;
+      margin-top: 1rem;
+      display: inline-block;
+      color: rgba(255, 255, 255, 0.1);
+      background: -webkit-gradient(linear, left top, right top, from(#222), to(#222), color-stop(0.5, #fff));
+      background: -moz-gradient(linear, left top, right top, from(#222), to(#222), color-stop(0.5, #fff));
+      background: linear-gradient(to right, #222 0%, #fff 50%, #222 100%);
+      -webkit-background-size: 125px 100%;
+      -moz-background-size: 125px 100%;
+      background-size: 125px 100%;
+      -webkit-background-clip: text;
+      -moz-background-clip: text;
+      background-clip: text;
+      -webkit-animation-name: shimmer;
+      -moz-animation-name: shimmer;
+      animation-name: shimmer;
+      -webkit-animation-duration: 2s;
+      -moz-animation-duration: 2s;
+      animation-duration: 2s;
+      -webkit-animation-iteration-count: infinite;
+      -moz-animation-iteration-count: infinite;
+      animation-iteration-count: infinite;
+      background-repeat: no-repeat;
+      background-position: 0 0;
+      background-color: #222;
     }
-
+    @-moz-keyframes shimmer {
+      0% { background-position: top left; }
+      100% { background-position: top right; }
+    }
+    @-webkit-keyframes shimmer {
+      0% { background-position: top left; }
+      100% { background-position: top right; }
+    }
+    @-o-keyframes shimmer {
+      0% { background-position: top left; }
+      100% { background-position: top right; }
+    }
+    @keyframes shimmer {
+      0% { background-position: top left; }
+      100% { background-position: top right; }
+    }
     .promo {
       font-size: 1.8rem;
       color: #ffeb3b;
@@ -129,16 +145,16 @@
     <img src="https://img.itch.zone/aW1nLzIwMzYyODQ1LmdpZg==/original/s1wPE2.gif" alt="Banner">
   </header>
   <main>
-    <h1>Nymphomania: Fantasy Town</h1>
+    <h1 class="shimmer">Nymphomania: Fantasy Town</h1>
     <div class="cta-buttons">
       <a href="https://unifoxstudio.itch.io/nft?utm_source=exoclick&utm_medium=landing&utm_campaign=game_launch" target="_blank" onclick="gtag('event', 'click', { event_category: 'outbound', event_label: 'Itchio' });">▶️ Play Free Now</a>
       <a href="https://www.patreon.com/nymphomaniafantasytown?utm_source=exoclick&utm_medium=landing&utm_campaign=game_launch" target="_blank" onclick="gtag('event', 'click', { event_category: 'outbound', event_label: 'Patreon' });">❤️ Unlock Full Version</a>
     </div>
-    <div class="promo">✨ Get 25% off now with code <strong>IWANNAWONK</strong> ✨</div>
+    <div class="promo">✨ Get 25% off now with code <strong>IWANNAWANK</strong> ✨</div>
     <p>Rebuild your ruined fantasy village… and fill it with lewd pop culture girls!<br>
     NSFW Game (18+)<br>
-	Build. Flirt. Dominate.<br>
-	Unlock your true potential as their god!</p>
+    Build. Flirt. Dominate.<br>
+    Unlock your true potential as their god!</p>
 
     <div class="screenshots">
       <img src="https://img.itch.zone/aW1hZ2UvMjYyODYxMS8yMTIxNjM5Ni5naWY=/original/SsEjR0.gif" alt="Screenshot 1">
