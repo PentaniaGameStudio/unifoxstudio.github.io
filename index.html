@@ -24,6 +24,7 @@
       font-family: 'Mogra', cursive;
       text-align: center;
       backdrop-filter: blur(4px);
+      overflow-x: hidden;
     }
     header img {
       width: 100%;
@@ -31,7 +32,7 @@
       object-fit: cover;
     }
     h1 {
-      font-size: 3rem;
+      font-size: 4rem;
       margin-top: 1rem;
       color: #f56ca4;
       text-shadow: 2px 2px 4px #000;
@@ -40,12 +41,14 @@
       font-size: 1.8rem;
       color: #ffeb3b;
       text-shadow: 2px 2px 4px #000;
-      animation: pulse 2s infinite;
+      animation: pulse 3s ease-in-out infinite;
       margin: 1rem auto;
     }
     @keyframes pulse {
       0% { transform: scale(1); opacity: 1; }
-      50% { transform: scale(1.05); opacity: 0.8; }
+      5% { transform: scale(1.02); opacity: 1; }
+      50% { transform: scale(1.08); opacity: 1; }
+      95% { transform: scale(1.02); opacity: 1; }
       100% { transform: scale(1); opacity: 1; }
     }
     p {
@@ -55,7 +58,7 @@
       text-shadow: 1px 1px 2px #000;
     }
     .cta-buttons {
-      margin: 1rem 0 2rem;
+      margin: 1rem 0 1rem;
     }
     .cta-buttons a {
       display: inline-block;
@@ -68,7 +71,7 @@
       border-radius: 10px;
       transition: background-color 0.3s, transform 0.3s, opacity 0.3s;
       box-shadow: 2px 2px 6px #000;
-      animation: pulse 2s infinite;
+      animation: pulse 3s ease-in-out infinite;
     }
     .cta-buttons a:hover {
       background-color: #ff85b4;
