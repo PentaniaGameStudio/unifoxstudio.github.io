@@ -41,14 +41,14 @@
       font-size: 1.8rem;
       color: #ffeb3b;
       text-shadow: 2px 2px 4px #000;
-      animation: pulse 3s ease-in-out infinite;
+      animation: pulseLerp 3s ease-in-out infinite;
       margin: 1rem auto;
     }
-    @keyframes pulse {
+    @keyframes pulseLerp {
       0% { transform: scale(1); opacity: 1; }
-      5% { transform: scale(1.02); opacity: 1; }
-      50% { transform: scale(1.08); opacity: 1; }
-      95% { transform: scale(1.02); opacity: 1; }
+      25% { transform: scale(1.02); opacity: 1; }
+      50% { transform: scale(1.06); opacity: 12; }
+      75% { transform: scale(1.02); opacity: 1; }
       100% { transform: scale(1); opacity: 1; }
     }
     p {
@@ -71,7 +71,7 @@
       border-radius: 10px;
       transition: background-color 0.3s, transform 0.3s, opacity 0.3s;
       box-shadow: 2px 2px 6px #000;
-      animation: pulse 3s ease-in-out infinite;
+      animation: pulseLerp 3s ease-in-out infinite;
     }
     .cta-buttons a:hover {
       background-color: #ff85b4;
