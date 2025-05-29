@@ -11,6 +11,14 @@
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'G-79Z3TFRFMG');
+
+    // Apply random animation delay to each CTA button
+    window.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('.cta-buttons a').forEach(button => {
+        const delay = (Math.random() * 3).toFixed(2) + 's';
+        button.style.animationDelay = delay;
+      });
+    });
   </script>
   <style>
     body {
@@ -41,13 +49,13 @@
       font-size: 1.8rem;
       color: #ffeb3b;
       text-shadow: 2px 2px 4px #000;
-      animation: pulseLerp 3s ease-in-out infinite;
+      animation: pulseLerp 3s cubic-bezier(0.645, 0.045, 0.355, 1) infinite;
       margin: 1rem auto;
     }
     @keyframes pulseLerp {
       0% { transform: scale(1); opacity: 1; }
       25% { transform: scale(1.02); opacity: 1; }
-      50% { transform: scale(1.06); opacity: 12; }
+      50% { transform: scale(1.06); opacity: 1; }
       75% { transform: scale(1.02); opacity: 1; }
       100% { transform: scale(1); opacity: 1; }
     }
@@ -71,7 +79,7 @@
       border-radius: 10px;
       transition: background-color 0.3s, transform 0.3s, opacity 0.3s;
       box-shadow: 2px 2px 6px #000;
-      animation: pulseLerp 3s ease-in-out infinite;
+      animation: pulseLerp 3s cubic-bezier(0.645, 0.045, 0.355, 1) infinite;
     }
     .cta-buttons a:hover {
       background-color: #ff85b4;
@@ -107,7 +115,7 @@
       <a href="https://unifoxstudio.itch.io/nft?utm_source=exoclick&utm_medium=landing&utm_campaign=game_launch" target="_blank" onclick="gtag('event', 'click', { event_category: 'outbound', event_label: 'Itchio' });">▶️ Play Free Now</a>
       <a href="https://www.patreon.com/nymphomaniafantasytown?utm_source=exoclick&utm_medium=landing&utm_campaign=game_launch" target="_blank" onclick="gtag('event', 'click', { event_category: 'outbound', event_label: 'Patreon' });">❤️ Unlock Full Version</a>
     </div>
-    <div class="promo">✨ Get 25% now with code <strong>IWANNAWANK</strong> ✨</div>
+    <div class="promo">✨ Get 25% now with code <strong>IWANNAWONK</strong> ✨</div>
     <p>Rebuild your ruined fantasy village… and fill it with lewd pop culture girls!<br>
     NSFW Game (18+)<br>
 	Build. Flirt. Dominate.<br>
