@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Nymphomania: Fantasy Town – Adult Game</title>
-  <link href="https://fonts.googleapis.com/css2?family=Mogra&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Mogra&display=swap" rel="stylesheet">
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-79Z3TFRFMG"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -12,6 +12,7 @@
     gtag('js', new Date());
     gtag('config', 'G-79Z3TFRFMG');
 
+    // Apply random animation delay to each CTA button
     window.addEventListener('DOMContentLoaded', () => {
       document.querySelectorAll('.cta-buttons a').forEach(button => {
         const delay = (Math.random() * 1).toFixed(2) + 's';
@@ -33,49 +34,58 @@
       backdrop-filter: blur(4px);
       overflow-x: hidden;
     }
-
     header img {
       width: 100%;
       max-height: 300px;
       object-fit: cover;
     }
 
-    h1.shimmer {
-      font-family: 'Mogra', cursive;
-      font-size: 4rem;
-      margin-top: 1rem;
-      display: inline-block;
+.h1-wrapper {
+  position: relative; /* contexte de positionnement */
+}
 
-      background: linear-gradient(
-        to right,
-        #f56ca4 0%,
-        #f56ca4 40%,
-        #ffffff 50%,
-        #f56ca4 60%,
-        #f56ca4 100%
-      );
-      background-size: 300% 100%;
-      background-position: -100% 0;
-      -webkit-background-clip: text;
-      -moz-background-clip: text;
-      background-clip: text;
-      color: transparent;
+.h1-wrapper h1 {
+  position: absolute; /* nécessaire pour z-index */
+  top: 0;
+  left: 50%;
+  transform: translateX(-40%);
+  
+	  font-size: 4rem;
+	  margin-top: 1rem;
+	  font-family: 'Mogra', cursive;
+	  text-align: center;
+	  color: rgba(245, 108, 164, 0.1);
+	  background: linear-gradient(to right, #f56ca4, #fff 50%, #f56ca4);
+	  background-size: 125px 100%;
+	  background-clip: text;
+	  background-repeat: no-repeat;
+	  background-color: #f56ca4;
+	  overflow: hidden;
+}
 
-      animation: shimmer 2.5s linear infinite;
+.h1-wrapper h1.stroke {
+  z-index: 0;
+  color: transparent;
+  -webkit-text-stroke: 4px #fabad4;
+}
 
-      text-shadow:
-        -2px -2px 4px #000,
-         2px -2px 4px #000,
-        -2px  2px 4px #000,
-         2px  2px 4px #000;
-    }
+.h1-wrapper h1:not(.stroke) {
+  position: relative; /* <- reste dans le flux */
+		z-index: 1;
+	  -webkit-background-clip: text;
+	  -webkit-animation: shimmer 2s infinite;
+	  animation: shimmer 2s infinite;
+	  background-position: 20 20;
+}
+
+
 
     @keyframes shimmer {
       0% {
-        background-position: -100% 0;
+        background-position: top left;
       }
       100% {
-        background-position: 200% 0;
+        background-position: top right;
       }
     }
 
@@ -83,27 +93,23 @@
       font-size: 1.8rem;
       color: #ffeb3b;
       text-shadow: 2px 2px 4px #000;
-      animation: pulseLerp 2s cubic-bezier(0.645, 0.045, 0.355, 1) infinite alternate;
+      animation: pulseLerp 2s ease-in-out infinite;
       margin: 1rem auto;
     }
-
     @keyframes pulseLerp {
       0% { transform: scale(1); opacity: 1; }
       50% { transform: scale(1.06); opacity: 1; }
       100% { transform: scale(1); opacity: 1; }
     }
-
     p {
       max-width: 800px;
       margin: 1rem auto;
       font-size: 1.6rem;
       text-shadow: 1px 1px 2px #000;
     }
-
     .cta-buttons {
       margin: 1rem 0 1rem;
     }
-
     .cta-buttons a {
       display: inline-block;
       padding: 1.5rem 3rem;
@@ -115,13 +121,11 @@
       border-radius: 10px;
       transition: background-color 0.3s, transform 0.3s, opacity 0.3s;
       box-shadow: 2px 2px 6px #000;
-      animation: pulseLerp 2s cubic-bezier(0.645, 0.045, 0.355, 1) infinite alternate;
+      animation: pulseLerp 2s ease-in-out infinite;
     }
-
     .cta-buttons a:hover {
       background-color: #ff85b4;
     }
-
     .screenshots {
       display: flex;
       flex-wrap: wrap;
@@ -129,14 +133,135 @@
       gap: 10px;
       padding: 1rem;
     }
-
     .screenshots img {
       width: 300px;
       max-width: 100%;
       border-radius: 10px;
       box-shadow: 2px 2px 8px #000;
     }
+    footer {
+      margin: 3rem 0 1rem;
+      font-size: 0.9rem;
+      color: #ccc;
+      text-shadow: 1px 1px 2px #000;
+    }
+  </style><!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nymphomania: Fantasy Town – Adult Game</title>
+  <link href="https://fonts.googleapis.com/css2?family=Mogra&display=swap" rel="stylesheet">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-79Z3TFRFMG"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-79Z3TFRFMG');
 
+    // Apply random animation delay to each CTA button
+    window.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('.cta-buttons a').forEach(button => {
+        const delay = (Math.random() * 1).toFixed(2) + 's';
+        button.style.animationDelay = delay;
+      });
+    });
+  </script>
+  <style>
+    body {
+      margin: 0;
+      background-image: url('https://img.itch.zone/aW1nLzIwMzYyODQ2LnBuZw==/original/TFtWhq.png');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+      color: #fff;
+      font-family: 'Mogra', cursive;
+      text-align: center;
+      backdrop-filter: blur(4px);
+      overflow-x: hidden;
+    }
+    header img {
+      width: 100%;
+      max-height: 300px;
+      object-fit: cover;
+    }
+	h1 {
+	  font-size: 4rem;
+	  margin-top: 1rem;
+	  font-family: 'Mogra', cursive;
+	  text-align: center;
+	  color: rgba(245, 108, 164, 0.1);
+	  background: linear-gradient(to right, #f56ca4, #fff 50%, #f56ca4);
+	  background-size: 125px 100%;
+	  background-clip: text;
+	  -webkit-background-clip: text;
+	  -webkit-animation: shimmer 2s infinite;
+	  animation: shimmer 2s infinite;
+	  background-repeat: no-repeat;
+	  background-position: 0 0;
+	  background-color: #f56ca4;
+	  -webkit-text-stroke: 1px #fabad4;
+	}
+    @keyframes shimmer {
+      0% {
+        background-position: top left;
+      }
+      100% {
+        background-position: top right;
+      }
+    }
+
+    .promo {
+      font-size: 1.8rem;
+      color: #ffeb3b;
+      text-shadow: 2px 2px 4px #000;
+      animation: pulseLerp 2s ease-in-out infinite;
+      margin: 1rem auto;
+    }
+    @keyframes pulseLerp {
+      0% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.06); opacity: 1; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+    p {
+      max-width: 800px;
+      margin: 1rem auto;
+      font-size: 1.6rem;
+      text-shadow: 1px 1px 2px #000;
+    }
+    .cta-buttons {
+      margin: 1rem 0 1rem;
+    }
+    .cta-buttons a {
+      display: inline-block;
+      padding: 1.5rem 3rem;
+      margin: 1rem;
+      font-size: 1.5rem;
+      background-color: #f56ca4;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 10px;
+      transition: background-color 0.3s, transform 0.3s, opacity 0.3s;
+      box-shadow: 2px 2px 6px #000;
+      animation: pulseLerp 2s ease-in-out infinite;
+    }
+    .cta-buttons a:hover {
+      background-color: #ff85b4;
+    }
+    .screenshots {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      padding: 1rem;
+    }
+    .screenshots img {
+      width: 300px;
+      max-width: 100%;
+      border-radius: 10px;
+      box-shadow: 2px 2px 8px #000;
+    }
     footer {
       margin: 3rem 0 1rem;
       font-size: 0.9rem;
@@ -150,16 +275,16 @@
     <img src="https://img.itch.zone/aW1nLzIwMzYyODQ1LmdpZg==/original/s1wPE2.gif" alt="Banner">
   </header>
   <main>
-    <h1 class="shimmer">Nymphomania: Fantasy Town</h1>
+    <h1>Nymphomania: Fantasy Town</h1>
     <div class="cta-buttons">
       <a href="https://unifoxstudio.itch.io/nft?utm_source=exoclick&utm_medium=landing&utm_campaign=game_launch" target="_blank" onclick="gtag('event', 'click', { event_category: 'outbound', event_label: 'Itchio' });">▶️ Play Free Now</a>
       <a href="https://www.patreon.com/nymphomaniafantasytown?utm_source=exoclick&utm_medium=landing&utm_campaign=game_launch" target="_blank" onclick="gtag('event', 'click', { event_category: 'outbound', event_label: 'Patreon' });">❤️ Unlock Full Version</a>
     </div>
-    <div class="promo">✨ Get 25% off now with code <strong>IWANNAWANK</strong> ✨</div>
+    <div class="promo">✨ Get 25% off now with code <strong>IWANNAWONK</strong> ✨</div>
     <p>Rebuild your ruined fantasy village… and fill it with lewd pop culture girls!<br>
     NSFW Game (18+)<br>
-    Build. Flirt. Dominate.<br>
-    Unlock your true potential as their god!</p>
+	Build. Flirt. Dominate.<br>
+	Unlock your true potential as their god!</p>
 
     <div class="screenshots">
       <img src="https://img.itch.zone/aW1hZ2UvMjYyODYxMS8yMTIxNjM5Ni5naWY=/original/SsEjR0.gif" alt="Screenshot 1">
@@ -175,4 +300,4 @@
     &copy; Unifox Game Studio – NSFW Content. Adults only (18+)
   </footer>
 </body>
-</html>
+</html> 
