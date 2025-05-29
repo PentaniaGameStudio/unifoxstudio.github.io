@@ -44,7 +44,25 @@
       margin-top: 1rem;
       color: #f56ca4;
       text-shadow: 2px 2px 4px #000;
+      position: relative;
+      display: inline-block;
+      overflow: hidden;
     }
+    h1::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -75%;
+      width: 50%;
+      height: 100%;
+      background: linear-gradient(120deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.6) 50%, rgba(255,255,255,0) 100%);
+      animation: shimmer 3s infinite;
+    }
+   @keyframes shimmer {
+      0% { left: -75%; }
+      50% { left: 125%; }
+      100% { left: 125%; }
+   }
     .promo {
       font-size: 1.8rem;
       color: #ffeb3b;
