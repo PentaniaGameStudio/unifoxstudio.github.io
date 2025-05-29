@@ -39,27 +39,33 @@
       max-height: 300px;
       object-fit: cover;
     }
-h1 {
-  font-size: 4rem;
-  margin-top: 1rem;
-  font-family: 'Mogra', cursive;
-  background: linear-gradient(
-    120deg,
-    #f56ca4 0%,
-    #ffffff 40%,
-    #f56ca4 60%
-  );
-  background-size: 300% auto;
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
-  animation: shimmerText 3s infinite linear;
-}
+	h1 {
+	  font-size: 4rem;
+	  margin-top: 1rem;
+	  font-family: 'Mogra', cursive;
+	  text-align: center;
+	  color: rgba(255, 255, 255, 0.1);
+	  background: linear-gradient(to right, #222, #fff 50%, #222);
+	  background-size: 125px 100%;
+	  background-clip: text;
+	  -webkit-background-clip: text;
+	  -webkit-animation: shimmer 2s infinite;
+	  animation: shimmer 2s infinite;
+	  background-repeat: no-repeat;
+	  background-position: 0 0;
+	  background-color: #222;
+	  overflow: hidden;
+	}
 
-@keyframes shimmerText {
-  0% {    background-position: 200% center;  }
-  100% {    background-position: -200% center;  }
-}
+    @keyframes shimmer {
+      0% {
+        background-position: top left;
+      }
+      100% {
+        background-position: top right;
+      }
+    }
+
     .promo {
       font-size: 1.8rem;
       color: #ffeb3b;
