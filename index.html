@@ -15,7 +15,7 @@
     // Apply random animation delay to each CTA button
     window.addEventListener('DOMContentLoaded', () => {
       document.querySelectorAll('.cta-buttons a').forEach(button => {
-        const delay = (Math.random() * 3).toFixed(2) + 's';
+        const delay = (Math.random() * 1).toFixed(2) + 's';
         button.style.animationDelay = delay;
       });
     });
@@ -49,7 +49,7 @@
       font-size: 1.8rem;
       color: #ffeb3b;
       text-shadow: 2px 2px 4px #000;
-      animation: pulseLerp 3s cubic-bezier(0.645, 0.045, 0.355, 1) infinite;
+      animation: pulseLerp 2s cubic-bezier(0.645, 0.045, 0.355, 1) infinite;
       margin: 1rem auto;
     }
     @keyframes pulseLerp {
